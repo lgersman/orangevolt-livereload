@@ -4,7 +4,7 @@
 
 ##### **[orangevolt-livereload]** lets you easily edit your [Github] wiki pages (aka [Markdown]/[gfm] files) in your favorite editor while having live preview in the browser.
 
-![orangevolt-livereload screencast](screencast.gif)
+![orangevolt-livereload screencast](//raw.github.com/lgersman/orangevolt-livereload/master/screencast.gif)
 
 You dont need [Gollum] anymore - use your favorite editor. Just save the file and the browser reloads it automatically.
 
