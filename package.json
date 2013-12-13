@@ -1,9 +1,9 @@
 {
-  "name"    : "orangevolt-livereload",
-  "version" : "0.1.0",
-  "main"    : "./index.js",
-  "bin" : {
-    "orangevolt-livereload" : "./bin/orangevolt-livereload"
+  "name": "orangevolt-livereload",
+  "version": "0.1.0",
+  "main": "./index.js",
+  "bin": {
+    "orangevolt-livereload": "./bin/orangevolt-livereload"
   },
   "dependencies": {
     "marked": "~0.2.10",
@@ -19,12 +19,12 @@
   },
   "description": "A grunt connect task middleware for live editing Github md files (README.md or even Github wiki pages) by just using Grunt.",
   "scripts": {
-    "test"                  : "grunt test",
-    "orangevolt-livereload" : "node ./bin/orangevolt-livereload"
+    "test": "grunt test",
+    "orangevolt-livereload": "node ./bin/orangevolt-livereload"
   },
   "repository": {
-    "type"  : "git",
-    "url"   : "https://github.com/lgersman/orangevolt-livereload"
+    "type": "git",
+    "url": "https://github.com/lgersman/orangevolt-livereload"
   },
   "keywords": [
     "livereload",
@@ -36,23 +36,23 @@
     "github"
   ],
   "author": {
-    "name"  : "Lars Gersmann",
-    "email" : "lars.gersmann@gmail.com",
-    "url"   : "http://www.orangevolt.com"
+    "name": "Lars Gersmann",
+    "email": "lars.gersmann@gmail.com",
+    "url": "http://www.orangevolt.com"
   },
-  "homepage" : "https://github.com/lgersman/orangevolt-livereload",
-  "licenses" : [
+  "homepage": "https://github.com/lgersman/orangevolt-livereload",
+  "licenses": [
     {
-      "type" : "MIT",
-      "url"  : "https://raw.github.com/lgersman/orangevolt-docp/master/LICENSE-MIT"
+      "type": "MIT",
+      "url": "https://raw.github.com/lgersman/orangevolt-docp/master/LICENSE-MIT"
     },
     {
-      "type" : "GNU",
-      "url"  : "https://raw.github.com/lgersman/orangevolt-docp/master/LICENSE-GNU"
+      "type": "GNU",
+      "url": "https://raw.github.com/lgersman/orangevolt-docp/master/LICENSE-GNU"
     }
   ],
-  "engines" : {
-    "node" : ">= 0.8.0"
+  "engines": {
+    "node": ">= 0.8.0"
   },
-  "preferGlobal" : true
+  "preferGlobal": true
 }
