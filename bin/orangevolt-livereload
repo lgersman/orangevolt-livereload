@@ -1,0 +1,70 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var grunt = require( 'grunt'),
+	path  = require( 'path'),
+	options = require( 'commander')
+;
+
+process.title = 'orangevolt-livereload';
+
+var self = grunt.file.readJSON( path.join( __dirname, '../package.json'));
+
+options
+.version( self.version)
+.option('-v, --verbose', 'Verbose mode. A lot more information output.')
+.option('-d, --debug', 'Verbose mode. A lot more information output.')
+.on('--help', function(){
+	console.log( '  %s %s (%s, %s <%s>)', self.name, options.version(), self.homepage, self.author.name, self.author.email);
+})
+.parse( process.argv);
+
+if( options.verbose) {
+	grunt.option( 'verbose', true);
+}
+
+	// hack to avoid loading a Gruntfile
+	// You can skip this and just use a Gruntfile instead
+grunt.task.init = function() {};
+
+grunt.log.write( 'orangevolt-livereload (' + path.resolve( '.') + ')\n\n');
+
+grunt.initConfig( {
+	watch	: {
+		options: {
+			livereload : 9091
+		},
+		files: [ '*.md']
+	},
+	connect : {
+		server : {
+			options : {
+				port        : 9090,
+				middleware  : require( path.join( __dirname, '../')).grunt.livereload.middleware(),
+				hostname    : '*',
+				livereload  : 9091,
+				directory   : '.'
+			}        
+		}
+	},
+	open 	: {
+		all : {
+			path : "http://localhost:9090/"
+		}
+	}
+});
+
+	// Load tasks from npm
+grunt.loadNpmTasks( 'grunt-open');
+grunt.loadNpmTasks( 'grunt-contrib-connect');
+grunt.loadNpmTasks( 'grunt-contrib-watch');
+
+	// Register your own tasks
+grunt.registerTask( 'default', function() {
+  grunt.log.write( "\n\nOpen 'http://localhost:9090' in your browser and navigate to an *.md file for start editing.\n\n");
+  grunt.log.write( "Press Ctrl-C to exit live editing.\n\n")
+});
+
+	// Finally run the tasks, with options and a callback when we're done
+grunt.tasks( ['default', 'connect', 'open', 'watch']);

@@ -1,0 +1,131 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" type="text/css" href="//github.global.ssl.fastly.net/assets/github-aa3aa5ee0b47eb1e117167bf22f7f950b28f9e9e.css">
+		<link rel="stylesheet" type="text/css" href="//github.global.ssl.fastly.net/assets/github2-dbdd43783918261c8951ce48eb2bfadd48df5d0a.css">
+
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+		<style>
+			.ov-livereload-progress {
+				position: fixed;
+				top: 10px;
+				left: 33%;
+				margin: auto;
+				width: 33%;
+			}
+		</style>
+
+		<script type="text/javascript">
+			/**
+			 * a grunt watch live-reload plugin supporting reload of html snippets
+			 * 
+			 * @return {LiveReloadPlugin} the plugin constructor
+			 * 
+			 * @see https://github.com/livereload/livereload-js
+			 */
+			window.LiveReloadPluginOrangevolt = (function() {
+				var target;
+
+				function LivrereloadPlugin( window, options) {
+					$( window).ready( function() {
+						var target = $( '.markdown-body');
+
+						this.reload( target.data( 'url'), {});
+
+						$( '.ov-livereload-progress').show();
+					}.bind( this));
+				}
+				LivrereloadPlugin.identifier = "orangevolt-livereload";
+				LivrereloadPlugin.version = "0.1.0";
+
+				LivrereloadPlugin.prototype.reload = function( path, options) {
+					var target = $( '.markdown-body');
+
+					var scroll = {
+						x : window.scrollX,
+						y : window.scrollY
+					};
+
+					$( '.ov-livereload-progress').animate({
+						'opacity' : 1.0
+					});
+					
+					target.css({
+						'opacity' : 0.3
+					});
+
+					var ajaxOptions = {
+						url 	: '/' + path,
+						cache 	: false 
+					};
+
+					$.ajax( ajaxOptions)
+					.done( function( content, textStatus, jqXHR) {
+						content = $( content);
+
+							// adjust highlight syntax css classes to match github css classes
+						content.children( 'PRE >CODE')
+							.addClass( 'highlight')
+							.find( '.keyword').addClass( 'k').end()
+							.find( '.comment').addClass( 'c').end()
+							.find( '.literal').addClass( 'm').end()
+							.find( '.number').addClass( 'm').end()
+							.find( '.string').addClass( 's').end()
+							.find( '.regexp').addClass( 'sr').end()
+							.find( '.built_in').addClass( 'nb').end()
+							.find( '.class').addClass( 'nc').end()
+							.find( '.title').addClass( 'nf').end()
+							.find( '.title').addClass( 'nf').end()
+						;
+
+						$( target).empty().append( content);
+
+						window.scrollTo( scroll.x, scroll.y);
+					}) 
+					.always( function() {
+						$( '.ov-livereload-progress').animate({
+							'opacity' : 0
+						});
+						target.animate({
+							'opacity' : 1.0
+						});
+					});			
+
+						// -> means reload was handled by this plugin
+					return true;
+				};
+
+				return LivrereloadPlugin;
+			})();
+		</script>
+ 	</head>
+ 	<body> 			
+  		<div class="container">
+  			<div class="repository-with-sidebar repo-container">
+  				<div class="repository-sidebar">
+  				</div>
+  				<div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container="">	
+			  		<div class="page">
+			  			<h1 class="title"><%- url.substr( 1)%></h1>
+			  			<p>
+			  				<em>(<%- url.substr( 1)%>)</em>
+			  				<progress  style="display:none" class="ov-livereload-progress">reloading content ...</progress>
+			  			</p>
+			  			<hr>
+			  		</div>
+
+			  		<div class="markdown-body" data-url="<%- url.substr( 1)%>">
+			  		</div>
+			  	</div>
+		  	</div>
+	  	</div>
+	</body>
+</html>
