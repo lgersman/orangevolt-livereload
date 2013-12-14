@@ -2,7 +2,7 @@
 [![NPM version](https://badge.fury.io/js/orangevolt-livereload.png)](http://badge.fury.io/js/orangevolt-livereload)
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/lgersman/orangevolt-livereload/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
-##### **[orangevolt-livereload]** lets you easily edit your [Github] wiki pages (aka [Markdown]/[gfm] files) in your favorite editor while having live preview in the browser.
+##### **[orangevolt-livereload]** lets you easily edit your [Github] wiki pages (aka [Markdown] / [gfm] files) in your favorite editor while having live preview in the browser.
 
 ![orangevolt-livereload screencast](https://raw.github.com/lgersman/orangevolt-livereload/master/screencast.gif)
 
@@ -106,14 +106,13 @@ to increase inotify watche handles (See http://stackoverflow.com/questions/16748
 [NPM]: 			https://npmjs.org/ 
 [NodeJs]:		http://nodejs.org/
 [gfm]: 			http://github.github.com/github-flavored-markdown/ "Github Flavored Markdown"
-[Markdown]:	 	http://daringfireball.net/projects/markdown/syntax
+[Markdown]:		http://daringfireball.net/projects/markdown/syntax
 [marked]:		https://github.com/chjj/marked	
 [LiveReload]: 	http://livereload.com/
 [Grunt]: 		http://gruntjs.com/ "GruntJS"
 [Gollum]: 		https://github.com/gollum/gollum
 [Highlight.js]: https://github.com/isagalaev/highlight.js 
 [jsFiddle]:		http://jsfiddle.net/
-[orangevolt-macrop]:	 https://github.com/lgersman/orangevolt-macrop "Orangevolt Macrop"
 [orangevolt-livereload]: https://github.com/lgersman/orangevolt-livereload "Orangevolt Docp"
 [GitHub]:		https://github.com/
 [FontAwesome]:	http://fontawesome.io/
