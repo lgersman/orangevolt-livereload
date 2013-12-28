@@ -55,7 +55,7 @@ connect : {
   all : {
     options : {
       port        : 9090,
-      middleware  : require( './').grunt.livereload.middleware(),
+      middleware  : require( 'orangevolt-livereload').grunt.livereload.middleware(),
       hostname    : '*',
       livereload  : 9091,
       directory   : __dirname
