@@ -6,10 +6,10 @@
     "orangevolt-livereload": "./bin/orangevolt-livereload"
   },
   "dependencies": {
-    "marked": "~0.2.10",
     "ejs": "~0.8.4",
     "highlight.js": "~8.0.0",
-    "commander": "~2.1.0"
+    "commander": "~2.1.0",
+    "marked": "~0.3.1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
