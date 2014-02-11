@@ -74,16 +74,16 @@
 							// adjust highlight syntax css classes to match github css classes
 						content.children( 'PRE >CODE')
 							.addClass( 'highlight')
-							.find( '.keyword').addClass( 'k').end()
-							.find( '.comment').addClass( 'c').end()
-							.find( '.literal').addClass( 'm').end()
-							.find( '.number').addClass( 'm').end()
-							.find( '.string').addClass( 's').end()
-							.find( '.regexp').addClass( 'sr').end()
-							.find( '.built_in').addClass( 'nb').end()
-							.find( '.class').addClass( 'nc').end()
-							.find( '.title').addClass( 'nf').end()
-							.find( '.title').addClass( 'nf').end()
+							.find( '.hljs-keyword').addClass( 'k').end()
+							.find( '.hljs-comment').addClass( 'c').end()
+							.find( '.hljs-literal').addClass( 'm').end()
+							.find( '.hljs-number').addClass( 'm').end()
+							.find( '.hljs-string').addClass( 's').end()
+							.find( '.hljs-regexp').addClass( 'sr').end()
+							.find( '.hljs-built_in').addClass( 'nb').end()
+							.find( '.hljs-class').addClass( 'nc').end()
+							.find( '.hljs-title').addClass( 'nf').end()
+							.find( '.hljs-title').addClass( 'nf').end()
 						;
 
 						$( target).empty().append( content);
